@@ -133,7 +133,7 @@ public class PlayerService {
 		List<BoardGameDTO> allBoardGames = boardGameService.getAllBoardGames();
 		if (newGame != null) {
 			for (int i = 0; i < allBoardGames.size(); i++) {
-				if (allBoardGames.get(i).getName() != newGame) {
+				if (!(allBoardGames.get(i).getName().equals(newGame))) {
 					BoardGameDTO newBoardGameDTO = new BoardGameDTO(newGame);
 					boardGameService.addBoardGame(newBoardGameDTO);
 				}

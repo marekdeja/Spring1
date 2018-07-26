@@ -92,7 +92,7 @@ public class HoursService {
 			for(int j=0; j<userHours.size(); j++){
 				HoursDTO currentEnemyHours = (HoursDTO) restHours.get(i);
 				HoursDTO currentUserHours = (HoursDTO) userHours.get(i);
-				if((currentEnemyHours.getDay()== currentUserHours.getDay())){
+				if((currentEnemyHours.getDay().equals(currentUserHours.getDay()))){
 					if (this.countRange(currentUserHours.getStart(), currentUserHours.getEnd(), currentEnemyHours.getStart(), currentEnemyHours.getEnd())){
 						similarHours.add(currentEnemyHours);
 					}

@@ -7,10 +7,9 @@ import com.capgemini.springTask1.boardGame.BoardGameEntity;
 
 public class DatabaseBoardGames {
 	
-	private List boardGameList;
+	List <BoardGameEntity> boardGameList = new ArrayList<>();
 	
 	public DatabaseBoardGames(){
-		List <BoardGameEntity> boardGameList = new ArrayList<>();
 		
 		boardGameList.add(new BoardGameEntity("Monopoly"));
 		boardGameList.add(new BoardGameEntity("Chess"));

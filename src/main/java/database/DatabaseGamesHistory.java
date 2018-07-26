@@ -7,17 +7,16 @@ import com.capgemini.springTask1.gamesHistory.GameEntity;
 
 public class DatabaseGamesHistory {
 	
-	private List gamesHistory;
+	List <GameEntity> gamesHistory = new ArrayList<GameEntity>();
 	
 	public DatabaseGamesHistory(){
-		List <GameEntity> gamesHistory = new ArrayList();
 		
 		gamesHistory.add(new GameEntity(0, 1, 3, 1));
 		gamesHistory.add(new GameEntity(1, 0, 0, 1));
 		
 	}
 
-	public List getGamesHistory(){
+	public List<GameEntity> getGamesHistory(){
 		return this.gamesHistory;
 	}
 }

@@ -9,10 +9,9 @@ import com.capgemini.springTask1.player.PlayerEntity;
 public class DatabasePlayers {
 	
 	
-	private List players;
+	List <PlayerEntity> players = new ArrayList<>();
 
 	public DatabasePlayers(){
-		List <PlayerEntity> players = new ArrayList<>();
 		
 		List <BoardGameEntity> ownedGamesPlayer0 = new ArrayList<>();
 		ownedGamesPlayer0.add(new BoardGameEntity("Monopoly"));

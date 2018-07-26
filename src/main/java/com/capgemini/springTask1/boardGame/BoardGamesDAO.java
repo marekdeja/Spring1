@@ -12,8 +12,9 @@ public class BoardGamesDAO {
 	List<BoardGameEntity> boardGames = databaseBoardGames.getBoardGamesList();
 	
 	public void addBoardGame(String name){
-		if (boardGames.indexOf(name)==-1){
-		boardGames.add(new BoardGameEntity(name));
+		BoardGameEntity addedChecker = new BoardGameEntity(name);
+		if (boardGames.indexOf(addedChecker)==-1){
+		boardGames.add(addedChecker);
 		}
 	}
 	
