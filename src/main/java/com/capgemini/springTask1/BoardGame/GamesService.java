@@ -22,7 +22,7 @@ public class GamesService {
 	}
 
 	public List getAllBoardGames() {
-		List allGames =	(List) boardGameMapper.convert(gameDAO.getAllBoardGames());
-		return allGames;
+		List allGames =	gameDAO.getAllBoardGames();
+		return boardGameMapper.convert(allGames);
 	}
 }
