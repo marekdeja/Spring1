@@ -18,7 +18,7 @@ import com.capgemini.springTask1.system.Login;
  */
 @Service
 public class HoursService {
-
+//user story 4
 	private final HoursDAO hoursDAO;
 	private final HoursMapper hoursMapper;
 	int loggedUserId = Login.getLoginId();
