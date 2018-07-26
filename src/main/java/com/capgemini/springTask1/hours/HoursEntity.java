@@ -1,13 +1,13 @@
-package com.capgemini.springTask1.houres;
+package com.capgemini.springTask1.hours;
 
-public class HouresEntity {
+public class HoursEntity {
 
 	private int playerId;
 	private String day;
 	private int start;
 	private int end;
 
-	public HouresEntity(int playerId, String day, int start, int end) {
+	public HoursEntity(int playerId, String day, int start, int end) {
 		super();
 		this.playerId = playerId;
 		this.day = day;

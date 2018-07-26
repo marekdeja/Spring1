@@ -1,13 +1,13 @@
-package com.capgemini.springTask1.houres;
+package com.capgemini.springTask1.hours;
 
-public class HouresDTO {
+public class HoursDTO {
 
 	private int playerId;
 	private String day;
 	private int start;
 	private int end;
 
-	public HouresDTO(int playerId, String day, int start, int end) {
+	public HoursDTO(int playerId, String day, int start, int end) {
 		super();
 		this.playerId = playerId;
 		this.day = day;
