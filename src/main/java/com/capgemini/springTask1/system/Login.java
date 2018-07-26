@@ -1,4 +1,4 @@
-package com.capgemini.springTask1.System;
+package com.capgemini.springTask1.system;
 
 public class Login {
 	private static int loginId=1;

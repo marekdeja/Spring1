@@ -1,9 +1,12 @@
-package com.capgemini.springTask1.Player;
+package com.capgemini.springTask1.player;
 
 import java.util.List;
 
-import com.capgemini.springTask1.BoardGame.BoardGameEntity;
+import org.springframework.stereotype.Component;
 
+import com.capgemini.springTask1.boardGame.BoardGameEntity;
+
+@Component
 public class PlayerMapper {
 
 	public PlayerDTO convertInfo(PlayerEntity playerEntity) {
@@ -14,13 +17,7 @@ public class PlayerMapper {
 		String password = playerEntity.getPassword();
 		String motto = playerEntity.getMotto();
 
-		PlayerDTO playerDTO = null;
-		playerDTO.setName(name);
-		playerDTO.setSurname(surname);
-		playerDTO.setEmail(email);
-		playerDTO.setPassword(password);
-		playerDTO.setMotto(motto);
-
+		PlayerDTO playerDTO = new PlayerDTO(name, surname, email, password, motto);
 		return playerDTO;
 	}
 
@@ -32,13 +29,7 @@ public class PlayerMapper {
 		String password = playerDTO.getPassword();
 		String motto = playerDTO.getMotto();
 
-		PlayerEntity playerEntity = null;
-		playerEntity.setName(name);
-		playerEntity.setSurname(surname);
-		playerEntity.setEmail(email);
-		playerEntity.setPassword(password);
-		playerEntity.setMotto(motto);
-
+		PlayerEntity playerEntity = new PlayerEntity(name, surname, email, password, motto);
 		return playerEntity;
 	}
 

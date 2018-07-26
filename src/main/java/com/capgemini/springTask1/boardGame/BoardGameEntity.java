@@ -1,4 +1,4 @@
-package com.capgemini.springTask1.BoardGame;
+package com.capgemini.springTask1.boardGame;
 
 public class BoardGameEntity {
 	private String name;

@@ -1,4 +1,4 @@
-package com.capgemini.springTask1.BoardGame;
+package com.capgemini.springTask1.boardGame;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ public class BoardGamesDAO {
 		}
 	}
 	
-	public List getAllBoardGames(){
+	public List<BoardGameEntity> getAllBoardGames(){
 		return boardGames;
 	}
 }

@@ -3,7 +3,7 @@ package database;
 import java.util.ArrayList;
 import java.util.List;
 
-import GamesHistory.GameEntity;
+import com.capgemini.springTask1.gamesHistory.GameEntity;
 
 public class DatabaseGamesHistory {
 	

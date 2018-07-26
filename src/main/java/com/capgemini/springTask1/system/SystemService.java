@@ -1,12 +1,12 @@
-package com.capgemini.springTask1.System;
+package com.capgemini.springTask1.system;
 
 import org.springframework.stereotype.Service;
 
 @Service
 public class SystemService {
 
-	public void createPotentialPlayers{
-		
-	}
+//	public void createPotentialPlayers{
+//		
+//	}
 	
 }

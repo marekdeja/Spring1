@@ -1,13 +1,13 @@
-package GamesHistory;
+package com.capgemini.springTask1.gamesHistory;
 
-public class GameDTO {
+public class GameEntity {
 
-	int playerId;
-	int opponentId;
-	int pointsGot;
-	int gameNumber;
+	private int playerId;
+	private int opponentId;
+	private int pointsGot;
+	private int gameNumber;
 	
-	public GameDTO(int playerId, int opponentId, int pointsGot, int gameNumber) {
+	public GameEntity(int playerId, int opponentId, int pointsGot, int gameNumber) {
 		super();
 		this.playerId = playerId;
 		this.opponentId = opponentId;

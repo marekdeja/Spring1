@@ -1,7 +1,10 @@
-package com.capgemini.springTask1.BoardGame;
+package com.capgemini.springTask1.boardGame;
 
 public class BoardGameDTO {
 	private String name;
+	
+	public BoardGameDTO(){
+	}
 	
 	public BoardGameDTO(String name){
 		this.name=name;

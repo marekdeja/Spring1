@@ -1,4 +1,4 @@
-package com.capgemini.springTask1.Player;
+package com.capgemini.springTask1.player;
 
 import java.util.List;
 
@@ -15,6 +15,15 @@ public class PlayerDTO {
 	private int gamesDrawn;
 	private int gamesLost;
 	private List ownedGames;
+	
+	public PlayerDTO(String name, String surname, String email, String password, String motto) {
+		super();
+		this.name = name;
+		this.surname = surname;
+		this.email = email;
+		this.password = password;
+		this.motto = motto;
+	}
 	
 	public PlayerDTO(int id, String name, String surname, String email, String password, String motto, int gamesWon,
 			int gamesDrawn, int gamesLost, List ownedGames) {

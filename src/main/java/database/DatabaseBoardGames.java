@@ -3,7 +3,7 @@ package database;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.capgemini.springTask1.BoardGame.BoardGameEntity;
+import com.capgemini.springTask1.boardGame.BoardGameEntity;
 
 public class DatabaseBoardGames {
 	
