@@ -55,10 +55,11 @@ public class HoursService {
 	}
 	
 	
-	public void changehours(List <HoursDTO> hoursDTO){
+	public void changehours(List<HoursDTO> hoursDTO){
 		List<HoursEntity> hoursEntitiesUser = new ArrayList<>();
 		for (int i=0; i < hoursDTO.size(); i++){
 			HoursEntity hoursEntity = hoursMapper.convert(hoursDTO.get(i));
+			hoursEntitiesUser.add(hoursEntity);
 		}
 		hoursDAO.savehours(hoursEntitiesUser);
 	}
@@ -91,7 +92,7 @@ public class HoursService {
 		for (int i=0; i<restHours.size();i++){
 			for(int j=0; j<userHours.size(); j++){
 				HoursDTO currentEnemyHours = (HoursDTO) restHours.get(i);
-				HoursDTO currentUserHours = (HoursDTO) userHours.get(i);
+				HoursDTO currentUserHours = (HoursDTO) userHours.get(j);
 				if((currentEnemyHours.getDay().equals(currentUserHours.getDay()))){
 					if (this.countRange(currentUserHours.getStart(), currentUserHours.getEnd(), currentEnemyHours.getStart(), currentEnemyHours.getEnd())){
 						similarHours.add(currentEnemyHours);

@@ -19,40 +19,40 @@ public class DatabasePlayers {
 		ownedGamesPlayer0.add(new BoardGameEntity("Witcher"));
 		
 		List <BoardGameEntity> ownedGamesPlayer1 = new ArrayList<>();
-		ownedGamesPlayer0.add(new BoardGameEntity("Chess"));
-		ownedGamesPlayer0.add(new BoardGameEntity("Witcher"));
+		ownedGamesPlayer1.add(new BoardGameEntity("Chess"));
+		ownedGamesPlayer1.add(new BoardGameEntity("Witcher"));
 		
 		List <BoardGameEntity> ownedGamesPlayer2 = new ArrayList<>();
-		ownedGamesPlayer0.add(new BoardGameEntity("Chess"));
+		ownedGamesPlayer2.add(new BoardGameEntity("Chess"));
 		
 		List <BoardGameEntity> ownedGamesPlayer3 = new ArrayList<>();
-		ownedGamesPlayer0.add(new BoardGameEntity("Warhammer"));
+		ownedGamesPlayer3.add(new BoardGameEntity("Warhammer"));
 		
 		List <BoardGameEntity> ownedGamesPlayer4 = new ArrayList<>();
-		ownedGamesPlayer0.add(new BoardGameEntity("Monopoly"));
-		ownedGamesPlayer0.add(new BoardGameEntity("Chess"));
-		ownedGamesPlayer0.add(new BoardGameEntity("Witcher"));
+		ownedGamesPlayer4.add(new BoardGameEntity("Monopoly"));
+		ownedGamesPlayer4.add(new BoardGameEntity("Chess"));
+		ownedGamesPlayer4.add(new BoardGameEntity("Witcher"));
 		
 		List <BoardGameEntity> ownedGamesPlayer5 = new ArrayList<>();
-		ownedGamesPlayer0.add(new BoardGameEntity("Monopoly"));
-		ownedGamesPlayer0.add(new BoardGameEntity("Chess"));
-		ownedGamesPlayer0.add(new BoardGameEntity("Warhammer"));
+		ownedGamesPlayer5.add(new BoardGameEntity("Monopoly"));
+		ownedGamesPlayer5.add(new BoardGameEntity("Chess"));
+		ownedGamesPlayer5.add(new BoardGameEntity("Warhammer"));
 		
 		List <BoardGameEntity> ownedGamesPlayer6 = new ArrayList<>();
-		ownedGamesPlayer0.add(new BoardGameEntity("Warhammer"));
-		ownedGamesPlayer0.add(new BoardGameEntity("Witcher"));
+		ownedGamesPlayer6.add(new BoardGameEntity("Warhammer"));
+		ownedGamesPlayer6.add(new BoardGameEntity("Witcher"));
 		
 		List <BoardGameEntity> ownedGamesPlayer7 = new ArrayList<>();
-		ownedGamesPlayer0.add(new BoardGameEntity("Monopoly"));
-		ownedGamesPlayer0.add(new BoardGameEntity("Chess"));
-		ownedGamesPlayer0.add(new BoardGameEntity("Witcher"));
+		ownedGamesPlayer7.add(new BoardGameEntity("Monopoly"));
+		ownedGamesPlayer7.add(new BoardGameEntity("Chess"));
+		ownedGamesPlayer7.add(new BoardGameEntity("Witcher"));
 		
 		List <BoardGameEntity> ownedGamesPlayer8 = new ArrayList<>();
-		ownedGamesPlayer0.add(new BoardGameEntity("Monopoly"));
-		ownedGamesPlayer0.add(new BoardGameEntity("Chess"));
+		ownedGamesPlayer8.add(new BoardGameEntity("Monopoly"));
+		ownedGamesPlayer8.add(new BoardGameEntity("Chess"));
 		
 		List <BoardGameEntity> ownedGamesPlayer9 = new ArrayList<>();
-		ownedGamesPlayer0.add(new BoardGameEntity("Monopoly"));
+		ownedGamesPlayer8.add(new BoardGameEntity("Monopoly"));
 
 
 		players.add(new PlayerEntity(0, "Tomek", "Kowalski", "tomekkowalski@cp.pl", "1234","I like oranges", 1, 5, 4, ownedGamesPlayer0));

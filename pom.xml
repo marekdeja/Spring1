@@ -42,19 +42,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- AspectJ dependencies -->
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjrt</artifactId>
-			<version>${aspectj.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjtools</artifactId>
-			<version>${aspectj.version}</version>
-		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
 		<dependency>
 			<groupId>org.mockito</groupId>
@@ -62,6 +49,11 @@
 			<version>1.9.5</version>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+            </dependency>
 
 
 	</dependencies>

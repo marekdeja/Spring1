@@ -33,7 +33,12 @@ public class PlayerMapper {
 		return playerEntity;
 	}
 
-	public List convert(List playersDTO) {
-		return playersDTO;
+	public List convert(List players) {
+		for (int i=0; i<players.size(); i++){
+			this.convertInfo((PlayerEntity) players.get(i));
+		}
+		return players;
 	}
+	
+	
 }

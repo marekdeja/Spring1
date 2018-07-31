@@ -2,6 +2,7 @@ package com.capgemini.springTask1.player;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,19 +39,19 @@ public class PlayerService {
 	// User Story 3
 
 	public PlayerDTO getUserProfile() {
-		PlayerEntity playerEntity = playerDAO.getProfile(loggedUserId);
+		PlayerEntity playerEntity = playerDAO.findProfile(loggedUserId);
 		return playerMapper.convertInfo(playerEntity);
 	}
 
 	public void changeUserProfile(PlayerDTO playerDTO) {
-		 PlayerEntity newProfile = playerMapper.convertInfo(playerDTO);
-		 playerDAO.saveProfile(loggedUserId, newProfile);
+		PlayerEntity newProfile = playerMapper.convertInfo(playerDTO);
+		playerDAO.saveProfile(loggedUserId, newProfile);
 	}
 
 	// User Story 1
 
 	public Level getUserLevel(int loggedUser) {
-		PlayerEntity user = playerDAO.getProfile(loggedUserId);
+		PlayerEntity user = playerDAO.findProfile(loggedUserId);
 		int gamesWon = user.getGamesWon();
 
 		if (gamesWon > 45) {
@@ -62,17 +63,21 @@ public class PlayerService {
 		}
 	}
 
+	public PlayerDTO getAllPlayers() {
+		PlayerDTO players = (PlayerDTO) playerMapper.convert(playerDAO.findPlayers());
+		return players;
+	}
+
 	public void getStatistics(int loggedUser) {
 		this.getUserProfile();
 	}
 
 	/**
 	 * I compare two players in ArrayList, if next has more points than current,
-	 * then change positions and come back to index 0 of iterated list and
-	 * start iterating again until the ArrayList in correct order
+	 * then change positions and come back to index 0 of iterated list and start
+	 * iterating again until the ArrayList in correct order
 	 * 
-	 * @return
-	 * ranking position of user among all players
+	 * @return ranking position of user among all players
 	 */
 	public int getCurrentRankingPosition() {
 		List players = playerDAO.findPlayers();
@@ -87,14 +92,15 @@ public class PlayerService {
 
 			if (pointsPlayer < pointsNextPlayer) {
 				players.set(i, nextPlayer);
-				players.set(i+1, tempPlayer);
+				players.set(i + 1, tempPlayer);
 				i = 0;
 			}
 		}
 
 		for (int i = 0; i < players.size(); i++) {
-			if (((PlayerDTO) players.get(i)).getId() == loggedUserId) {
-				return players.indexOf(players.get(i));
+			if (((PlayerEntity) players.get(i)).getId() == loggedUserId) {
+				int indexPosition = players.indexOf(players.get(i));
+				return indexPosition + 1;
 			}
 		}
 		return 0;
@@ -123,12 +129,12 @@ public class PlayerService {
 	};
 
 	public void removeGameFromCollection(String gameToRemove) {
-		List ownedGames = this.playerDAO.getProfile(loggedUserId).getOwnedGames();
+		List ownedGames = this.playerDAO.findProfile(loggedUserId).getOwnedGames();
 		ownedGames.remove(gameToRemove);
 		this.playerDAO.removeGameFromCollection(ownedGames);
 	}
 
-	//no mapper because of String
+	// no mapper because of String
 	public void addGame(String newGame) {
 		List<BoardGameDTO> allBoardGames = boardGameService.getAllBoardGames();
 		if (newGame != null) {
@@ -143,6 +149,42 @@ public class PlayerService {
 		}
 
 	}
-	
-	
+
+	public PlayerDTO searchParas(String name, String surname, String email) {
+		List<PlayerDTO> allPlayers = (List<PlayerDTO>) this.getAllPlayers();
+
+		if (name != null) {
+			allPlayers = allPlayers.stream().filter(x -> name.equals(x.getName())).collect(Collectors.toList());
+		}
+		if (surname != null) {
+			allPlayers = allPlayers.stream().filter(x -> surname.equals(x.getSurname())).collect(Collectors.toList());
+		}
+		if (email != null) {
+			allPlayers = allPlayers.stream().filter(x -> email.equals(x.getEmail())).collect(Collectors.toList());
+		}
+		if (name == null && surname == null && email == null) {
+			return null;
+		}
+		return (PlayerDTO) allPlayers;
+
+	}
+
 }
+
+//
+// List <PlayerDTO> endResult = new ArrayList<>();
+// if (name!=null){
+// List <PlayerDTO> result = (List<PlayerDTO>) allPlayers.stream()
+// .filter(x -> name.equals(x.getName()))
+// .collect(Collectors.toList());
+//
+// for (int i=0; i<result.size(); i++){
+// endResult.set(i, result.get(i));
+// }
+// }
+//
+// if (surname!=null){
+// List <PlayerDTO> result2 = (List<PlayerDTO>) allPlayers.stream()
+// .filter(x -> surname.equals(x.getSurname()))
+// .collect(Collectors.toList());
+//

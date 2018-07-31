@@ -16,6 +16,13 @@ public class PlayerDTO {
 	private int gamesLost;
 	private List ownedGames;
 	
+	public PlayerDTO(String name, String surname, String email) {
+		super();
+		this.name = name;
+		this.surname = surname;
+		this.email = email;
+	}
+	
 	public PlayerDTO(String name, String surname, String email, String password, String motto) {
 		super();
 		this.name = name;

@@ -22,10 +22,9 @@ public class PlayerDAO {
 
 	int loggedUserId = 1;
 
-	public PlayerEntity getProfile(int loggedUserId) {
+	public PlayerEntity findProfile(int loggedUserId) {
 		return players.get(loggedUserId);
 	}
-
 	public void saveProfile(int loggedUserId, PlayerEntity newProfile) {
 		PlayerEntity playerEntity = players.get(loggedUserId);
 		playerEntity.setName(newProfile.getName());
