@@ -16,15 +16,19 @@ public class PlayerDTO {
 	private int gamesLost;
 	private List ownedGames;
 	
+	public PlayerDTO() {
+
+	}
+	
 	public PlayerDTO(String name, String surname, String email) {
-		super();
+
 		this.name = name;
 		this.surname = surname;
 		this.email = email;
 	}
 	
 	public PlayerDTO(String name, String surname, String email, String password, String motto) {
-		super();
+
 		this.name = name;
 		this.surname = surname;
 		this.email = email;
@@ -34,8 +38,7 @@ public class PlayerDTO {
 	
 	public PlayerDTO(int id, String name, String surname, String email, String password, String motto, int gamesWon,
 			int gamesDrawn, int gamesLost, List ownedGames) {
-		super();
-		this.id = id;
+	this.id = id;
 		this.name = name;
 		this.surname = surname;
 		this.email = email;
