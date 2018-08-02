@@ -37,6 +37,7 @@ public class SpringTask1ApplicationTests {
 	PlayerDAO playerDAO;
 	GameMapper gameMapper;
 	BoardGameService boardGameService;
+	PlayerService playerService;
 	
 //	@InjectMocks
 //	PlayerService playerService;
@@ -117,6 +118,25 @@ public class SpringTask1ApplicationTests {
 		//then
 		assertEquals(1, position);
 		
+	}
+	
+	@Test
+	public void checkSearchParas(){
+		
+		
+		List <BoardGameEntity> ownedGamesPlayer0 = new ArrayList<>();
+		ownedGamesPlayer0.add(new BoardGameEntity("Monopoly"));
+		ownedGamesPlayer0.add(new BoardGameEntity("Chess"));
+		ownedGamesPlayer0.add(new BoardGameEntity("Witcher"));
+		
+		List <PlayerDTO> userProfile = new ArrayList<PlayerDTO>();		
+		userProfile.add(new PlayerDTO(0, "Tomek", "Kowalski", "tomekkowalski@cp.pl", "1234","I like oranges", 1, 5, 4, ownedGamesPlayer0));
+		
+		Mockito.when(playerService.searchParas("Tomek", "Kowalski", "tomekkowalski@cp.pl")).thenReturn(userProfile);
+		
+		List <PlayerDTO> searchedPlayer = playerService.searchParas("Tomek", "Kowalski", "tomekkowalski@cp.pl");
+		
+		System.out.println(searchedPlayer.get(0).getName());
 	}
 
 }

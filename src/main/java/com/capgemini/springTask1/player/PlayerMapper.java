@@ -1,5 +1,6 @@
 package com.capgemini.springTask1.player;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -33,11 +34,14 @@ public class PlayerMapper {
 		return playerEntity;
 	}
 
-	public List convert(List players) {
+	public List <PlayerDTO> convert(List <PlayerEntity>players) {
+		List <PlayerDTO> playersDTO = new ArrayList<>();
 		for (int i=0; i<players.size(); i++){
-			this.convertInfo((PlayerEntity) players.get(i));
+			PlayerEntity playerEntity = players.get(i);
+			PlayerDTO playerDTO = this.convertInfo(playerEntity);
+			playersDTO.add(playerDTO);
 		}
-		return players;
+		return playersDTO;
 	}
 	
 	

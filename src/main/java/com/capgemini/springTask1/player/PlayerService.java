@@ -63,8 +63,8 @@ public class PlayerService {
 		}
 	}
 
-	public PlayerDTO getAllPlayers() {
-		PlayerDTO players = (PlayerDTO) playerMapper.convert(playerDAO.findPlayers());
+	public List <PlayerDTO> getAllPlayers() {
+		List <PlayerDTO> players = playerMapper.convert(playerDAO.findPlayers());
 		return players;
 	}
 
@@ -150,8 +150,8 @@ public class PlayerService {
 
 	}
 
-	public PlayerDTO searchParas(String name, String surname, String email) {
-		List<PlayerDTO> allPlayers = (List<PlayerDTO>) this.getAllPlayers();
+	public List <PlayerDTO> searchParas(String name, String surname, String email) {
+		List<PlayerDTO> allPlayers = this.getAllPlayers();
 
 		if (name != null) {
 			allPlayers = allPlayers.stream().filter(x -> name.equals(x.getName())).collect(Collectors.toList());
@@ -162,29 +162,15 @@ public class PlayerService {
 		if (email != null) {
 			allPlayers = allPlayers.stream().filter(x -> email.equals(x.getEmail())).collect(Collectors.toList());
 		}
-		if (name == null && surname == null && email == null) {
-			return null;
+		if (name == "" && surname == "" && email == "") {
+			throw new PlayerNotFoundException();
 		}
-		return (PlayerDTO) allPlayers;
+		if (allPlayers==null){
+			throw new PlayerNotFoundException();
+		}
+		return allPlayers;
 
 	}
 
 }
 
-//
-// List <PlayerDTO> endResult = new ArrayList<>();
-// if (name!=null){
-// List <PlayerDTO> result = (List<PlayerDTO>) allPlayers.stream()
-// .filter(x -> name.equals(x.getName()))
-// .collect(Collectors.toList());
-//
-// for (int i=0; i<result.size(); i++){
-// endResult.set(i, result.get(i));
-// }
-// }
-//
-// if (surname!=null){
-// List <PlayerDTO> result2 = (List<PlayerDTO>) allPlayers.stream()
-// .filter(x -> surname.equals(x.getSurname()))
-// .collect(Collectors.toList());
-//
